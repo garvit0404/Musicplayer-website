@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="flex h-screen w-screen items-center overflow-hidden bg-[#8C92AC] px-2"
+  >
+    <!-- Login -->
+    <form action="/login" method="post">
+      <div class="flex h-screen w-screen items-center overflow-hidden px-2">
+        <!-- Login -->
+        <div
+          class="relative flex w-96 flex-col space-y-5 rounded-lg border bg-gray-100 px-5 py-10 shadow-xl sm:mx-auto"
+        >
+          <div
+            class="-z-10 absolute top-4 left-1/2 h-full w-5/6 -translate-x-1/2 rounded-lg bg-gray-700 sm:-right-10 sm:top-auto sm:left-auto sm:w-full sm:translate-x-0"
+          ></div>
+          <div class="mx-auto mb-2 space-y-3">
+            <h1 class="text-center text-3xl font-bold text-gray-700">
+              Sign in
+            </h1>
+            <p class="text-gray-800 font-semibold p-2">
+              Sign in to access your account
+            </p>
+          </div>
+
+          <div>
+            <div class="relative mt-2 w-full">
+              <!-- Email Icon -->
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-gray-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M16 12v1m0 4v-1m-2-4h.01M12 12v1m0 4v-1m-2-4h.01M8 12v1m0 4v-1m-2-4h.01M5 8h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V10a2 2 0 012-2zM8 5h8m-4-2v2"
+                  />
+                </svg>
+              </span>
+              <input
+              type="email" name="email" id="email"
+                value="@gmail.com"
+                class="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent pl-10 pt-4 pb-2.5 text-sm text-gray-900 focus:border-slate-600 focus:outline-none focus:ring-0 shadow-sm"
+                placeholder=" "
+              />
+              <label
+                for="email"
+                class="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 font-semibold absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-gray-100 px-2 text-sm text-black duration-300"
+              >
+                Enter Your Email
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="relative mt-2 w-full">
+              <!-- Password Input with Eye Icon -->
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-gray-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 15l9-9m-9 9a7 7 0 01-7-7 7 7 0 017-7 7 7 0 017 7 7 7 0 01-7 7z"
+                  />
+                </svg>
+              </span>
+              <input
+                type="password"
+                name="password" id="password"
+                class="border-1 peer block w-full appearance-none rounded-lg border border-gray-300 bg-transparent pl-10 pt-4 pb-2.5 text-sm text-gray-900 focus:border-gray-900 focus:outline-none focus:ring-0"
+                placeholder=" "
+              />
+              <label
+                for="password"
+                class="origin-[0] peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600 font-semibold absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-gray-100 px-2 text-sm text-black duration-300"
+              >
+                Enter Your Password</label
+              >
+              <!-- Eye Icon for Show/Hide Password -->
+              <span
+                class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                onclick="togglePassword()"
+              >
+                <svg
+                  id="eyeIcon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-gray-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-.256.811-.601 1.597-1.028 2.339M15 12A5 5 0 015 12m-2.08 3.6A9.993 9.993 0 002.458 12c.319-.812.685-1.595 1.092-2.349M2.458 12c.254.816.601 1.598 1.028 2.34M2.458 12c.256-.811.601-1.597 1.028-2.339M21.542 12c-.254-.816-.601-1.598-1.028-2.34m0 4.68c-.256.811-.601 1.597-1.028 2.339M21.542 12a9.993 9.993 0 00-1.092 2.349M12 5c-4.477 0-8.268 2.943-9.542 7"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="flex w-full items-center">
+            <button
+            type="submit"
+              class="shrink-0 inline-block w-36 rounded-lg bg-gray-600 py-3 font-bold text-white"
+            >
+              Login
+            </button>
+            <a
+              class="w-full text-center text-sm font-medium text-gray-600 hover:underline"
+              href="#"
+              >Forgot your password?</a
+            >
+          </div>
+        </form>
+          <p class="text-center text-gray-600">
+            Don't have an account?
+            <a
+               href="./register"
+              class="whitespace-nowrap font-semibold text-gray-900 hover:underline"
+              >Sign up</a
+            >
+          </p>
+        </div>
+        <!-- /Login -->
+      </div>
+    
+    <script>
+      function togglePassword() {
+        const password = document.getElementById("password");
+        const eyeIcon = document.getElementById("eyeIcon");
+        if (password.type === "password") {
+          password.type = "text";
+          eyeIcon.innerHTML =
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-.256.811-.601 1.597-1.028 2.339M15 12A5 5 0 015 12m-2.08 3.6A9.993 9.993 0 002.458 12c.319-.812.685-1.595 1.092-2.349M2.458 12c.254.816.601 1.598 1.028 2.34M2.458 12c.256-.811.601-1.597 1.028-2.339M21.542 12c-.254-.816-.601-1.598-1.028-2.34m0 4.68c-.256.811-.601 1.597-1.028 2.339M21.542 12a9.993 9.993 0 00-1.092 2.349M12 5c-4.477 0-8.268 2.943-9.542 7"/></svg>';
+        } else {
+          password.type = "password";
+          eyeIcon.innerHTML =
+            '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-.256.811-.601 1.597-1.028 2.339M15 12A5 5 0 015 12m-2.08 3.6A9.993 9.993 0 002.458 12c.319-.812.685-1.595 1.092-2.349M2.458 12c.254.816.601 1.598 1.028 2.34M2.458 12c.256-.811.601-1.597 1.028-2.339M21.542 12c-.254-.816-.601-1.598-1.028-2.34m0 4.68c-.256.811-.601 1.597-1.028 2.339M21.542 12a9.993 9.993 0 00-1.092 2.349M12 5c-4.477 0-8.268 2.943-9.542 7"/></svg>';
+        }
+      }
+    </script>
+  </body>
+</html>

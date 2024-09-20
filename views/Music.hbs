@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Music Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="module" src="../js/music.js"></script>
+    <style>
+      .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.hover\:bg-gray-200:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity)) /* #e5e7eb */;
+}
+
+
+.text-color{
+    background-image: linear-gradient(to right, #4ea6e588, #ace53a);
+    color: rgba(2, 200, 218, 0.319);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+     </style>
+  </head>
+  <body class="bg-gray-900">
+    <header
+      class="flex items-center bg-gray-900 w-full cursor-pointer top-0 left-0"
+    >
+      <div class="flex mx-8 text-lg font-semibold text-white">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div id="logo" class="flex items-center p-5">
+        <img
+          class="h-10 w-auto"
+          src="https://firebasestorage.googleapis.com/v0/b/mediaplayer-73040.appspot.com/o/Logo.png?alt=media&token=34a54c85-810a-4779-8818-a73f122db4af"
+          alt="MediaVibe Vibe With Media"
+        />
+      </div>
+      <nav class="flex justify-evenly flex-grow">
+        <ul class="flex justify-center space-x-8 text-white p-2">
+          <li>
+            <a href="index.html" class="p-1 font-semibold text-lg">
+              <i class="fas fa-home text-gray-300 hover:text-white ml-2"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="p-1 font-semibold text-lg hover:bg-gray-200 hover:text-black hover:rounded-lg"
+              ><i class="fas fa-crown text-yellow-400"></i> Explore Premium</a
+            >
+          </li>
+        </ul>
+        <div class="flex items-center rounded-sm border-b w-80 border-gray-300">
+          <i class="fas fa-search text-gray-300 ml-2"></i>
+
+          <input
+            class="search p-2 text-gray-200 rounded-lg flex-grow outline-none bg-gray-900"
+            type="search"
+            placeholder="Search..."
+          />
+          <!-- Microphone Icon -->
+          <i
+            class="fas fa-microphone text-gray-300 mr-3"
+            id="voiceAssistantIcon"
+          ></i>
+        </div>
+      </nav>
+      <div class="flex mx-4">
+        <div class="flex justify-between items-center mx-4 my-4">
+          <i
+            class="fas fa-bell text-xl text-gray-300 hover:text-white mx-4"
+          ></i>
+          <p class="text-center text-md font-semibold text-gray-400 mx-1">
+            John Doe
+          </p>
+          <div class="h-10 w-10 bg-gray-600 rounded-full mx-1">
+            <i
+              class="fas fa-user text-2xl text-gray-300 hover:text-white mx-2 my-1"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="flex">
+      <div class="text-left w-64 h-full bg-gray-900 text-gray-300 p-4">
+        <!-- Starting of Sidebar -->
+        <ul class="mt-4 mx-4 space-y-4">
+          <li class="text-lg font-semibold">Main</li>
+          <li class="text-lg font-semibold">Radio</li>
+          <li class="text-lg font-semibold">Podcasts</li>
+          <li class="text-lg font-semibold">Books</li>
+        </ul>
+
+        <!-- Sub Heading in the center -->
+        <div class="mt-14 mx-4 text-left">
+          <h1 class="text-2xl font-bold mb-6">My Music</h1>
+          <ul class="space-y-4">
+            <li class="text-lg font-semibold">Tracks</li>
+            <li class="text-lg font-semibold">Albums</li>
+            <li class="text-lg font-semibold">Artists</li>
+            <li class="text-lg font-semibold">Playlists</li>
+            <li class="text-lg font-semibold">Files</li>
+            <li class="text-lg font-semibold">Favourties</li>
+          </ul>
+        </div>
+
+        <!-- End of Sidebar -->
+        <div class="mt-14 mx-4 text-left">
+          <ul class="space-y-4">
+            <li class="text-lg font-semibold">
+              <i class="fas fa-cog text-gray-300"></i> Settings
+            </li>
+            <li class="text-lg font-semibold">
+              <i class="fas fa-sign-out-alt text-gray-300"></i>
+
+              Logout
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="m-2 flex relative w-full h-fit rounded-xl bg-gray-700 ml-[-1rem]"
+      >
+        <div class="w-1/2 mx-8">
+          <p class="my-6 mx-10 text-2xl font-bold text-gray-300">Main</p>
+          <div class="relative mx-2 w-full h-56 rounded-2xl">
+            <img
+              src="../music-images/d1.png"
+              alt="Photo"
+              class="rounded-2xl w-full h-60"
+            />
+            <button class="absolute bottom-1 left-4 bg-white text-black font-semibold py-2 px-4 rounded-full flex items-center shadow-md hover:bg-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-5.197-3.07A1 1 0 008 8.918v6.164a1 1 0 001.555.832l5.197-3.07a1 1 0 000-1.664z" />
+              </svg>
+              Listen now
+            </button>
+          </div>
+          
+          <div class="w-full">
+            <div class="flex justify-between mx-2 mt-8 ">
+              <h1 class="mx-4 font-bold text-xl text-gray-300">Top Artists</h1>
+              <h2
+                class="my-1 font-bold text-md text-gray-300 hover:bg-gray-100 hover:text-black p-1 rounded-xl"
+              >
+                View All
+              </h2>
+            </div>
+
+            <div class=" mx-auto">
+              <!-- Container for horizontal scroll -->
+              <div class="overflow-x-auto scrollbar-hide">
+                <!-- Box Wrapper -->
+                <div id="boxContainer" class="flex space-x-4"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between mx-2 my-6">
+            <h1 class="mx-4 font-bold text-lg text-gray-300">
+              You May Also Like
+            </h1>
+            <h2
+              class="my-2 font-bold text-md text-gray-300 hover:bg-gray-100 hover:text-black p-1 rounded-xl"
+            >
+              View All
+            </h2>
+          </div>
+
+          <div id="boxContainer" class="flex flex-wrap gap-4"></div>
+          <div class="flex flex-col">
+            <!-- Group 1 -->
+            <div class="flex mx-2 space-x-4 w-full">
+              <!-- Song 1 -->
+              <div class="flex bg-gray-800 p-3 h-24 w-80 mb-4 rounded-lg">
+                <!-- Album cover -->
+                <img
+                  src="https://via.placeholder.com/60"
+                  alt="Album Cover"
+                  class="w-16 h-16 rounded my-1"
+                />
+
+                <!-- Song and artist info -->
+                <div class="flex-grow mx-4">
+                  <h3 class="text-lg font-semibold">Song Name 2</h3>
+                  <p class="text-sm text-gray-400">Artist Name</p>
+                  <p class="text-sm text-gray-400">1:15 / 3:30</p>
+                </div>
+
+                <!-- Add to Playlist button -->
+                <div class="flex">
+                  <button class="flex text-gray-300 hover:text-white my-8">
+                    <i
+                      class="fas fa-heart mx-4 hover:text-red-600 font-bold"
+                    ></i>
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Song 2 -->
+              <div class="flex bg-gray-800 p-3 h-24 w-80 mb-2 rounded-lg">
+                <!-- Album cover -->
+                <img
+                  src="https://via.placeholder.com/60"
+                  alt="Album Cover"
+                  class="w-16 h-16 rounded my-1"
+                />
+
+                <!-- Song and artist info -->
+                <div class="flex-grow mx-4">
+                  <h3 class="text-lg font-semibold">Song Name 2</h3>
+                  <p class="text-sm text-gray-400">Artist Name</p>
+                  <p class="text-sm text-gray-400">1:15 / 3:30</p>
+                </div>
+
+                <!-- Add to Playlist button -->
+                <div class="flex">
+                  <button class="flex text-gray-300 hover:text-white my-8">
+                    <i
+                      class="fas fa-heart mx-4 hover:text-red-600 font-bold"
+                    ></i>
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- HALF SECTION PART 2 -->
+        <div class="w-full mx-4">
+          <h1 class="my-6 mx-10 text-2xl font-bold text-left text-gray-300">
+            Now Playing
+          </h1>
+
+          <!-- Main Album Cover Section -->
+          <div
+            class="mr-8 w-full rounded-xl h-60 flex justify-center items-center cursor-pointer"
+          >
+            <img
+              id="album-cover"
+              src="https://via.placeholder.com/350"
+              alt="Album Cover"
+              class="track-artist w-56 h-auto rounded-xl"
+            />
+          </div>
+
+          <h2 class="my-6 mx-10 text-2xl font-bold text-left text-gray-300">
+            Next
+          </h2>
+          <!-- Song List Section -->
+          <div class="w-full my-4 p-4">
+            <!-- Song 2 -->
+            <div
+              id="song-2"
+              class="flex bg-gray-800 p-2 h-24 w-full mb-4 rounded-lg"
+            >
+              <img
+                src="https://via.placeholder.com/60"
+                alt="Album Cover"
+                class="w-20 h-20 rounded"
+              />
+              <div class="flex-grow mx-4">
+                <h3 class="text-lg font-semibold">Song Name 2</h3>
+                <p class="text-sm text-gray-400">Artist Name</p>
+                <p class="text-sm text-gray-400">0:00 / 0:00</p>
+              </div>
+              <div class="flex items-center">
+                <button class="text-gray-300 hover:text-white">
+                  <i class="fas fa-heart mx-4 hover:text-red-600 font-bold"></i>
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Song 3 -->
+            <div
+              id="song-3"
+              class="flex bg-gray-800 p-2 h-24 w-full mb-4 rounded-lg"
+            >
+              <img
+                src="https://via.placeholder.com/60"
+                alt="Album Cover"
+                class="w-20 h-20 rounded"
+              />
+              <div class="flex-grow mx-4">
+                <h3 class="text-lg font-semibold">Song Name 3</h3>
+                <p class="text-sm text-gray-400">Artist Name</p>
+                <p class="text-sm text-gray-400">0:00 / 0:00</p>
+              </div>
+              <div class="flex items-center">
+                <button class="text-gray-300 hover:text-white">
+                  <i class="fas fa-heart mx-4 hover:text-red-600 font-bold"></i>
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Song 4 -->
+            <div
+              id="song-4"
+              class="flex bg-gray-800 p-2 h-24 w-full mb-4 rounded-lg"
+            >
+              <img
+                src="https://via.placeholder.com/60"
+                alt="Album Cover"
+                class="w-20 h-20 rounded"
+              />
+              <div class="flex-grow mx-4">
+                <h3 class="text-lg font-semibold">Song Name 4</h3>
+                <p class="text-sm text-gray-400">Artist Name</p>
+                <p class="text-sm text-gray-400">0:00 / 0:00</p>
+              </div>
+              <div class="flex items-center">
+                <button class="text-gray-300 hover:text-white">
+                  <i class="fas fa-heart mx-4 hover:text-red-600 font-bold"></i>
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Audio Player Container -->
+      <div
+        id="audio-player"
+        class="fixed bottom-0 left-0 right-0 mx-8 rounded-xl bg-gray-500 text-white p-2 shadow-lg transform translate-y-full transition-transform duration-500 z-50"
+      >
+        <!-- Progress -->
+        <div
+          class="flex items-center justify-between my-2 text-gray-900 font-bold"
+        >
+          <span class="current-time mx-2">00:00</span>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            class="seek_slider w-full cursor-pointer border-gray-950"
+          />
+          <span class="total-duration mx-2">00:00</span>
+        </div>
+
+        <div class="flex justify-between">
+          <div
+            class="flex items-center justify-between bg-gray-900 m-2 rounded-lg"
+          >
+            <!-- Track Information -->
+            <div class="flex items-center p-2">
+              <div
+                class="track-art w-20 h-16 bg-cover bg-center rounded-lg mr-4"
+              ></div>
+              <div class="mx-2 text-gray-300">
+                <p class="track-name font-bold text-lg"></p>
+                <p class="track-artist text-sm text-gray-400"></p>
+                <p class="now-playing text-xs"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Playback Controls -->
+          <div
+            class="flex items-center justify-center space-x-6 p-2 rounded-md text-gray-900 font-bold"
+          >
+            <button class="prev-track text-2xl">
+              <i class="fas fa-step-backward hover:text-gray-100"></i>
+            </button>
+            <button class="playpause-track text-5xl hover:text-gray-100">
+              <i class="fas fa-play-circle"></i>
+            </button>
+            <button class="next-track text-2xl">
+              <i class="fas fa-step-forward hover:text-gray-100"></i>
+            </button>
+          </div>
+
+          <!-- Volume Controls -->
+          <div class="flex items-center space-x-4 p-2 rounded-md">
+            <button class="repeat-track text-lg">
+              <i
+                class="fas fa-random text-gray-900 font-bold hover:text-gray-100"
+              ></i>
+            </button>
+            <button class="playlist text-lg">
+              <i
+                class="fas fa-list text-gray-900 font-bold hover:text-gray-100"
+              ></i>
+            </button>
+            <button class="like text-lg">
+              <i
+                class="fas fa-heart text-gray-900 font-bold hover:text-red-600"
+              ></i>
+            </button>
+            <div class="flex items-center space-x-2 mb-3">
+              <button class="volume text-lg mt-2">
+                <i
+                  id="volume-icon"
+                  class="fas fa-volume-up text-gray-900 font-bold mt-2 hover:text-gray-100"
+                ></i>
+                <!-- Added id "volume-icon" -->
+              </button>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                class="volume_slider mt-2 w-24 cursor-pointer"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="wave" class="wave hidden border-2 border-black"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex h-screen w-screen items-center overflow-hidden bg-[#8C92AC] px-2">
+  <form action="/register" method="post">
+    <div class="flex h-screen w-screen items-center overflow-hidden px-2">
+      <div class="relative flex w-96 flex-col space-y-4 rounded-lg border bg-gray-300 px-5 py-10 shadow-xl sm:mx-auto">
+        <div
+          class="-z-10 absolute top-2 left-1/2 h-full w-5/6 -translate-x-1/2 rounded-lg bg-gray-700 sm:-right-10 sm:top-auto sm:left-auto sm:w-full sm:translate-x-0">
+        </div>
+        <div class="mx-auto mb-2 space-y-2">
+          <h1 class="text-center text-3xl font-bold text-gray-700">Sign Up</h1>
+          <p class="text-gray-800 font-semibold p-2">
+            New To Website? Just Sign Up
+          </p>
+        </div>
+
+        <!-- Email input -->
+        <div class="relative w-full">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <i class="fas fa-envelope text-gray-500"></i>
+          </span>
+          <input type="text" name="email" id="email" value="@gmail.com"
+            class="peer block w-full appearance-none rounded-lg border border-gray-500 bg-transparent pl-10 pt-4 pb-2.5 text-sm text-gray-900 focus:border-gray-800 focus:outline-2 focus:ring-0 shadow-sm"
+            placeholder=" " required />
+          <label for="email"
+            class="absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-gray-300 px-2 text-sm text-black font-semibold origin-[0] duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600">Enter
+            Your Email</label>
+        </div>
+
+        <!-- Mobile input with contact icon -->
+        <div class="relative w-full">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <i class="fas fa-phone text-gray-500"></i>
+          </span>
+          <input type="text" name="phone" id="mobile"
+            class="peer block w-full appearance-none rounded-lg border border-gray-500 bg-transparent pl-10 pt-4 pb-2.5 text-sm text-gray-900 focus:border-gray-800 focus:outline-2 focus:ring-0 shadow-sm"
+            placeholder=" " required />
+          <label for="mobile"
+            class="absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-gray-300 px-2 text-sm text-black font-semibold origin-[0] duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600">Enter
+            Your Mobile No</label>
+        </div>
+
+        <!-- Password input with eye icon -->
+        <div class="relative w-full">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <i class="fas fa-lock text-gray-500"></i>
+          </span>
+          <input type="password" name="password" id="password"
+            class="peer block w-full appearance-none rounded-lg border border-gray-500 bg-transparent pl-10 pt-4 pb-2.5 text-sm text-gray-900 focus:border-gray-800 focus:outline-2 focus:ring-0 shadow-sm"
+            placeholder=" " required />
+          <label for="password"
+            class="absolute left-1 top-2 z-10 -translate-y-4 scale-75 transform cursor-text select-none bg-gray-300 px-2 text-sm text-black font-semibold origin-[0] duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-blue-600">Enter
+            Your Password</label>
+          <!-- Eye icon for toggling password visibility -->
+          <span class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer" onclick="togglePassword()">
+            <i id="eyeIcon" class="fas fa-eye text-gray-500"></i>
+          </span>
+        </div>
+
+        <!-- Checkbox for terms and conditions -->
+        <div class="flex items-center">
+          <input type="checkbox" id="terms" class="mr-2" />
+          <label for="terms" class="text-sm font-medium text-gray-700">
+            I agree to terms and conditions
+          </label>
+        </div>
+
+        <!-- Centered Register button -->
+        <div class="flex justify-center w-full">
+          <button type="submit" class="inline-block w-36 rounded-lg bg-gray-600 py-3 font-bold text-white">
+            Register
+          </button>
+        </div>
+  </form>
+  <!-- Buttons for Google and Github Sign In -->
+  <div class="flex justify-evenly mt-4">
+    <button class="flex items-center justify-center w-36 rounded-lg bg-gray-800 py-3 font-bold text-white">
+      <i class="fab fa-google mr-2"></i> Google
+    </button>
+    <button class="flex items-center justify-center w-36 rounded-lg bg-gray-800 py-3 font-bold text-white">
+      <i class="fab fa-github mr-2"></i> Github
+    </button>
+  </div>
+
+  <p class="text-center text-slate-700 mt-4">
+    Already Have an Account?
+    <a href="./login" class="whitespace-nowrap font-semibold text-gray-900 hover:underline">Sign In</a>
+  </p>
+  </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const password = document.getElementById("password");
+      const eyeIcon = document.getElementById("eyeIcon");
+      if (password.type === "password") {
+        password.type = "text";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+      } else {
+        password.type = "password";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+      }
+    }
+  </script>
+</body>
+
+</html>
